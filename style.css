@@ -1,0 +1,791 @@
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cormorant+Garamond:wght@400;500;600&family=Amiri:wght@400;700&display=swap');
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  background: #e9e1d7;
+  color: #54463e;
+  font-family: 'Amiri', serif;
+}
+
+/* الكارت الأساسي */
+.invitation {
+  width: 100%;
+  max-width: 520px;
+  min-height: 620px;
+  padding: 60px 30px;
+  text-align: center;
+  background: #faf6ef;
+  border: 1px solid #c8b69b;
+  outline: 1px solid #c8b69b;
+  outline-offset: -9px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* النصوص */
+.eyebrow,
+.date {
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: 3px;
+  font-size: 11px;
+}
+
+.welcome {
+  margin-top: 38px;
+  font-size: 21px;
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 8vw, 51px);
+  font-weight: 400;
+  margin: 8px 0;
+  line-height: 1.25;
+}
+
+h1 span,
+.ornament {
+  color: #ad8d68;
+}
+
+.ornament {
+  font-size: 25px;
+  margin: 18px 0;
+}
+
+.message {
+  width: 100%;
+  max-width: 290px;
+  font-size: 18px;
+  line-height: 2;
+  overflow-wrap: anywhere;
+}
+
+.date {
+  margin-top: 28px;
+}
+
+.details {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 21px;
+}
+
+.footer {
+  margin-top: 35px;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: #9b7c5b;
+}
+
+/* شاشة البداية */
+.opening {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.envelope {
+  font-size: 78px;
+  color: #ad8d68;
+  margin: 25px 0;
+  animation: float 2s ease-in-out infinite;
+}
+
+#openButton {
+  max-width: 100%;
+  margin-top: 25px;
+  padding: 13px 30px;
+  border: 1px solid #ad8d68;
+  border-radius: 0;
+  background: transparent;
+  color: #54463e;
+  font-family: 'Amiri', serif;
+  font-size: 17px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#openButton:hover {
+  background: #ad8d68;
+  color: white;
+}
+
+#openButton:focus-visible,
+.wedding-button:focus-visible {
+  outline: 2px solid #9b7c5b;
+  outline-offset: 4px;
+}
+
+/* صفحة التفاصيل */
+.details-page {
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  animation: appear 1s ease;
+}
+
+.invitation.is-open .opening {
+  display: none;
+}
+
+.invitation.is-open .details-page {
+  display: flex;
+}
+
+/* الحركات */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* العد التنازلي */
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin: 20px 0;
+  direction: ltr;
+}
+
+.time-box {
+  flex: 1;
+  min-width: 0;
+  max-width: 76px;
+  padding: 12px 4px;
+  border: 1px solid #c8b69b;
+  background: rgba(255, 255, 255, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.time-box span {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 29px;
+  color: #9b7c5b;
+  font-variant-numeric: tabular-nums;
+}
+
+.time-box small {
+  font-family: 'Amiri', serif;
+  font-size: 13px;
+  color: #54463e;
+}
+
+.countdown-message {
+  font-family: 'Amiri', serif;
+  font-size: 17px;
+  color: #9b7c5b;
+  text-align: center;
+}
+
+/* أزرار القاعة والموسيقى */
+.wedding-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 18px;
+}
+
+.wedding-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid #ad8d68;
+  background: transparent;
+  color: #54463e;
+  font-family: 'Amiri', serif;
+  font-size: 16px;
+  line-height: 1.5;
+  text-decoration: none;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.wedding-button:hover {
+  background: #ad8d68;
+  color: white;
+}
+
+/* الموبايلات الصغيرة */
+@media (max-width: 480px) {
+  body {
+    padding: 12px;
+    align-items: center;
+  }
+
+  .invitation {
+    min-height: 0;
+    padding: 48px 22px;
+  }
+
+  .welcome {
+    margin-top: 25px;
+    font-size: 19px;
+  }
+
+  h1 {
+    font-size: clamp(32px, 9vw, 44px);
+  }
+
+  .message {
+    font-size: 17px;
+    line-height: 1.9;
+  }
+
+  .envelope {
+    font-size: 68px;
+    margin: 20px 0;
+  }
+
+  .date {
+    margin-top: 22px;
+  }
+
+  .countdown {
+    gap: 6px;
+  }
+
+  .time-box {
+    padding: 10px 2px;
+    gap: 4px;
+  }
+
+  .time-box span {
+    font-size: clamp(21px, 6vw, 27px);
+  }
+
+  .time-box small {
+    font-size: 12px;
+  }
+
+  .wedding-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .wedding-button {
+    width: 100%;
+    padding: 11px 12px;
+  }
+
+  .footer {
+    margin-top: 25px;
+  }
+}
+
+/* الشاشات القصيرة جدًا */
+@media (max-height: 700px) {
+  body {
+    align-items: flex-start;
+  }
+
+  .invitation {
+    min-height: 0;
+    margin: 8px 0;
+    padding-top: 38px;
+    padding-bottom: 38px;
+  }
+
+  .welcome {
+    margin-top: 20px;
+  }
+
+  .envelope {
+    margin: 15px 0;
+  }
+
+  .footer {
+    margin-top: 20px;
+  }
+}
+
+/* احترام إعداد تقليل الحركة */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== ROYAL BURGUNDY & GOLD THEME ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap');
+
+body {
+  background: #260711 !important;
+  font-family: 'Amiri', serif;
+}
+
+.invitation {
+  background: linear-gradient(145deg, #65152e, #480c20 55%, #350817) !important;
+  border: 2px solid #d4b16a !important;
+  outline: 1px solid rgba(212, 177, 106, 0.45) !important;
+  outline-offset: 6px;
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.45) !important;
+  color: #f8ecd2 !important;
+  position: relative;
+}
+
+/* Elegant gold headings */
+.invitation h1 {
+  font-family: 'Cinzel', serif !important;
+  color: #f0d59a !important;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+
+/* Make the ampersand much smaller */
+.invitation h1 span {
+  display: inline-block;
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 0.38em !important;
+  color: #d4b16a !important;
+  vertical-align: middle;
+  margin: 0 3px;
+  font-weight: 400;
+}
+
+/* Arabic text */
+.invitation .welcome,
+.invitation .message {
+  font-family: 'Amiri', serif !important;
+  color: #f8ecd2 !important;
+}
+
+.invitation .eyebrow,
+.invitation .date,
+.invitation .footer {
+  color: #d9bb7b !important;
+  letter-spacing: 2px;
+}
+
+.invitation .details {
+  color: #f1dfbd !important;
+}
+
+/* Decorative ornament */
+.invitation .ornament {
+  color: #e0bd70 !important;
+}
+
+/* Countdown boxes */
+.invitation .time-box {
+  background: rgba(30, 3, 13, 0.3) !important;
+  border: 1px solid #b99552 !important;
+  border-radius: 5px !important;
+  color: #f6dfaa !important;
+  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.12);
+}
+
+.invitation .time-box span {
+  color: #f4d99d !important;
+  font-family: 'Cinzel', serif;
+}
+
+.invitation .time-box small {
+  color: #ead5ac !important;
+}
+
+/* Wedding buttons */
+.invitation .wedding-button {
+  background: transparent !important;
+  border: 1px solid #d4b16a !important;
+  color: #f3dba7 !important;
+  border-radius: 5px !important;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.invitation .wedding-button:hover {
+  background: rgba(212, 177, 106, 0.12) !important;
+  transform: translateY(-2px);
+}
+
+/* Vinyl record button */
+.music-disc-button {
+  width: 70px;
+  height: 70px;
+  padding: 0;
+  margin: 12px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer;
+  box-shadow: none !important;
+}
+
+.vinyl-record {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background:
+    repeating-radial-gradient(
+      circle,
+      #201b1d 0px,
+      #201b1d 2px,
+      #393033 3px,
+      #201b1d 4px
+    );
+  border: 2px solid #d4b16a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease;
+}
+
+.vinyl-label {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4a0c20;
+  background: linear-gradient(135deg, #f4dfaa, #bd954c);
+  font-size: 15px;
+  border: 1px solid #fff0c9;
+}
+
+.music-disc-button.is-playing .vinyl-record {
+  animation: vinyl-spin 3s linear infinite;
+}
+
+@keyframes vinyl-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.invitation .music-disc-button {
+  width: 70px !important;
+  height: 70px !important;
+  min-height: 70px;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  flex-shrink: 0;
+}
+
+.invitation .music-disc-button:hover {
+  background: transparent !important;
+}
+
+/* ===== ROYAL WEDDING DETAILS ===== */
+
+/* إطار ذهبي ملكي مزدوج */
+.invitation {
+  position: relative !important;
+  border: 3px double #d8b56b !important;
+  outline: 1px solid rgba(216, 181, 107, 0.75) !important;
+  outline-offset: 5px;
+  box-shadow:
+    inset 0 0 0 5px #4b0c20,
+    inset 0 0 0 6px rgba(216, 181, 107, 0.65),
+    0 18px 55px rgba(0, 0, 0, 0.45) !important;
+  overflow: hidden;
+}
+
+/* زخرفة الزاويتين العلويتين */
+.invitation::before,
+.invitation::after {
+  content: "❦";
+  position: absolute;
+  top: 9px;
+  z-index: 5;
+  color: #e4c57f;
+  font-family: serif;
+  font-size: 37px;
+  line-height: 1;
+  text-shadow: 0 0 8px rgba(228, 197, 127, 0.25);
+  pointer-events: none;
+}
+
+.invitation::before {
+  left: 12px;
+}
+
+.invitation::after {
+  right: 12px;
+  transform: scaleX(-1);
+}
+
+/* زخرفة الزاويتين السفليتين */
+.details-page {
+  position: relative;
+}
+
+.details-page::before,
+.details-page::after {
+  content: "❦";
+  position: absolute;
+  bottom: 8px;
+  z-index: 5;
+  color: #e4c57f;
+  font-family: serif;
+  font-size: 32px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.details-page::before {
+  left: 10px;
+}
+
+.details-page::after {
+  right: 10px;
+  transform: scaleX(-1);
+}
+
+/* الخط العربي بطابع كلاسيكي مزخرف */
+.invitation .welcome,
+.invitation .message,
+.invitation .details,
+.invitation .countdown-message {
+  font-family: 'Aref Ruqaa', 'Amiri', serif !important;
+  font-weight: 400;
+  line-height: 1.9;
+}
+
+/* إبراز العبارات العربية */
+.invitation .welcome {
+  font-size: 1.4em;
+  color: #f1d69a !important;
+}
+
+.invitation .message {
+  font-size: 1.18em;
+  color: #f8ecd8 !important;
+}
+
+/* لمسة ذهبية على النجمة والزخارف */
+.invitation .ornament {
+  color: #e4c57f !important;
+  text-shadow: 0 0 10px rgba(228, 197, 127, 0.25);
+}
+
+/* إطار ذهبي هادئ حول عداد الوقت */
+.invitation .time-box {
+  border: 1px solid #c9a45c !important;
+  box-shadow: inset 0 0 12px rgba(216, 181, 107, 0.06);
+}
+
+/* الحفاظ على أناقة التصميم على الموبايل */
+@media (max-width: 480px) {
+  .invitation::before,
+  .invitation::after {
+    font-size: 29px;
+    top: 8px;
+  }
+
+  .details-page::before,
+  .details-page::after {
+    font-size: 26px;
+    bottom: 6px;
+  }
+
+  .invitation .welcome {
+    font-size: 1.25em;
+  }
+
+  .invitation .message {
+    font-size: 1.08em;
+  }
+}
+
+/* ===== ROMANTIC ROYAL FLORAL ANIMATION ===== */
+
+.invitation {
+  isolation: isolate;
+}
+
+/* Flower decorations */
+.floating-flower {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+  transform-origin: center;
+  animation: flower-float 5s ease-in-out infinite;
+}
+
+/* Large rose-gold blossoms */
+.flower-one {
+  top: 10%;
+  left: 5%;
+  font-size: 43px;
+  color: #d9a0a3;
+  text-shadow: 0 0 15px rgba(217, 160, 163, 0.25);
+  animation-delay: -1s;
+}
+
+.flower-two {
+  top: 23%;
+  right: 5%;
+  font-size: 34px;
+  color: #e4c57f;
+  animation-delay: -3s;
+}
+
+.flower-three {
+  top: 43%;
+  left: 3%;
+  font-size: 31px;
+  color: #c98291;
+  animation-delay: -2s;
+}
+
+.flower-four {
+  top: 58%;
+  right: 4%;
+  font-size: 42px;
+  color: #d7ad68;
+  animation-delay: -4s;
+}
+
+.flower-five {
+  bottom: 12%;
+  left: 7%;
+  font-size: 37px;
+  color: #d9a0a3;
+  animation-delay: -2.5s;
+}
+
+.flower-six {
+  bottom: 8%;
+  right: 8%;
+  font-size: 34px;
+  color: #e4c57f;
+  animation-delay: -1.5s;
+}
+
+/* Tiny golden sparkles */
+.flower-seven {
+  top: 34%;
+  right: 15%;
+  font-size: 23px;
+  color: #f2dba4;
+  animation: sparkle 2.5s ease-in-out infinite;
+}
+
+.flower-eight {
+  bottom: 28%;
+  left: 14%;
+  font-size: 25px;
+  color: #f2dba4;
+  animation: sparkle 3s ease-in-out infinite;
+  animation-delay: -1.5s;
+}
+
+/* Gentle floating and turning */
+@keyframes flower-float {
+  0%, 100% {
+    transform: translateY(0) rotate(-8deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(10deg);
+  }
+}
+
+/* Soft golden shimmer */
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(0.8) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(45deg);
+  }
+}
+
+/* Keep the main invitation text above the decorations */
+.opening,
+.details-page {
+  z-index: 2;
+}
+
+/* Make the flowers slightly smaller on phones */
+@media (max-width: 480px) {
+  .flower-one {
+    font-size: 34px;
+  }
+
+  .flower-two,
+  .flower-five {
+    font-size: 29px;
+  }
+
+  .flower-three,
+  .flower-six {
+    font-size: 26px;
+  }
+
+  .flower-four {
+    font-size: 33px;
+  }
+
+  .flower-seven,
+  .flower-eight {
+    font-size: 19px;
+  }
+}
